@@ -1,0 +1,79 @@
+public class Persona {
+    private int edad;
+    private String nombre;
+    private String telefono;
+
+    public Persona(int edad, String nombre, String telefono) {
+        this.edad = edad;
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+}
+
+public class Cliente extends Persona {
+    private double credito;
+
+    public Cliente(int edad, String nombre, String telefono, double credito) {
+        super(edad, nombre, telefono);
+        this.credito = credito;
+    }
+
+    public double getCredito() {
+        return credito;
+    }
+
+    public void setCredito(double credito) {
+        this.credito = credito;
+    }
+}
+
+public class Trabajador extends Persona {
+    private double salario;
+
+    public Trabajador(int edad, String nombre, String telefono, double salario) {
+        super(edad, nombre, telefono);
+        this.salario = salario;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente(30, "Juan", "123456789", 500.0);
+        System.out.println("Cliente: " + cliente.getNombre() + ", " + cliente.getEdad() + " años, teléfono " + cliente.getTelefono() + ", crédito: " + cliente.getCredito());
+
+        Trabajador trabajador = new Trabajador(25, "Pedro", "987654321", 2000.0);
+        System.out.println("Trabajador: " + trabajador.getNombre() + ", " + trabajador.getEdad() + " años, teléfono " + trabajador.getTelefono() + ", salario: " + trabajador.getSalario());
+    }
+}
